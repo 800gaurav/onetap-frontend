@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overscroll-behavior: none;  /* ✅ Prevents “rubber band” scroll */
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text-primary)); */
+}
+.dark {
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text-primary));
+}
+
+:root {
+  /* Light theme variables in RGB format */
+  --color-primary: 79 70 229;
+  --color-secondary: 139 92 246;
+  --color-accent: 236 72 153;
+  --color-success: 16 185 129;
+  --color-warning: 245 158 11;
+  --color-error: 239 68 68;
+  
+  --color-background: 255 255 255;
+  --color-surface: 249 250 251;
+  --color-surface-dark: 243 244 246;
+  --color-text-primary: 17 24 39;
+  --color-text-secondary: 107 114 128;
+  --color-text-tertiary: 156 163 175;
+  --color-border: 229 231 235;
+  --color-border-light: 243 244 246;
+}
+
+.dark {
+  /* Dark theme variables */
+  --color-primary: 129 140 248;
+  --color-secondary: 167 139 250;
+  --color-accent: 244 114 182;
+  --color-success: 52 211 153;
+  --color-warning: 251 191 36;
+  --color-error: 248 113 113;
+  
+  --color-background: 17 24 39;
+  --color-surface: 31 41 55;
+  --color-surface-dark: 55 65 81;
+  --color-text-primary: 249 250 251;
+  --color-text-secondary: 156 163 175;
+  --color-text-tertiary: 107 114 128;
+  --color-border: 55 65 81;
+  --color-border-light: 75 85 99;
+}
+
+@theme {
+  /* Register custom colors */
+  --color-primary: rgb(var(--color-primary));
+  --color-secondary: rgb(var(--color-secondary));
+  --color-accent: rgb(var(--color-accent));
+  --color-success: rgb(var(--color-success));
+  --color-warning: rgb(var(--color-warning));
+  --color-error: rgb(var(--color-error));
+  
+  --color-background: rgb(var(--color-background));
+  --color-surface: rgb(var(--color-surface));
+  --color-surface-dark: rgb(var(--color-surface-dark));
+  --color-text-primary: rgb(var(--color-text-primary));
+  --color-text-secondary: rgb(var(--color-text-secondary));
+  --color-text-tertiary: rgb(var(--color-text-tertiary));
+  --color-border: rgb(var(--color-border));
+  --color-border-light: rgb(var(--color-border-light));
+}
