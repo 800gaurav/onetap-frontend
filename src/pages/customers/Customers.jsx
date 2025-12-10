@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Plus, Search, Edit, Trash2, Phone, Mail, CreditCard, MessageCircle, MapPin, Eye, Filter, X } from 'lucide-react';
+import { Plus, Search, Edit, Trash2, Phone, Mail, CreditCard, MessageCircle, MapPin, Eye, Filter, X, ShoppingCart, DollarSign } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { customersAPI } from '../../services/api';
 import LoadingSpinner from '../../components/ui/LoadingSpinner';
 import Modal from '../../components/ui/Modal';
@@ -8,6 +9,7 @@ import Button from '../../components/ui/Button';
 import toast from 'react-hot-toast';
 
 const Customers = () => {
+  const navigate = useNavigate();
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -365,13 +367,20 @@ const Customers = () => {
                 <span className="text-gray-600">Balance:</span>
                 <span className="font-semibold text-gray-900">₹{customer.balance?.toLocaleString() || 0}</span>
               </div>
-              <div className="mt-2">
+              <div className="mt-3 flex gap-2">
                 <button
-                  onClick={() => viewCustomerBalance(customer)}
-                  className="flex items-center text-sm text-purple-600 hover:text-purple-800"
+                  onClick={() => navigate(`/dashboard/customer-sales/${customer._id}`)}
+                  className="flex-1 flex items-center justify-center gap-1 px-3 py-2 text-xs bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"
                 >
-                  <Eye size={14} className="mr-1" />
-                  View Details
+                  <ShoppingCart size={14} />
+                  Sales
+                </button>
+                <button
+                  onClick={() => navigate(`/dashboard/customer-payments/${customer._id}`)}
+                  className="flex-1 flex items-center justify-center gap-1 px-3 py-2 text-xs bg-green-50 text-green-600 hover:bg-green-100 rounded-lg transition-colors"
+                >
+                  <DollarSign size={14} />
+                  Payments
                 </button>
               </div>
             </div>

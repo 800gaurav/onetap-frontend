@@ -9,6 +9,8 @@ import Sidebar from '../../../components/layout/Sidebar';
 import Dashboard from '../../dashboard/Dashboard';
 import Suppliers from '../../suppliers/Suppliers';
 import Customers from '../../customers/Customers';
+import CustomerSales from '../../customers/CustomerSales';
+import CustomerPayments from '../../customers/CustomerPayments';
 import Materials from '../../materials/Materials';
 import Orders from '../../orders/Orders';
 import Payments from '../../payments/Payments';
@@ -55,6 +57,10 @@ export default function UserDashboard() {
                   <Route path="/suppliers" element={<Suppliers />} />
                   <Route path="/purchases" element={<Purchases />} />
                   <Route path="/customers" element={<Customers />} />
+                  <Route path="/customer-sales" element={<CustomerSales />} />
+                  <Route path="/customer-sales/:customerId" element={<CustomerSales />} />
+                  <Route path="/customer-payments" element={<CustomerPayments />} />
+                  <Route path="/customer-payments/:customerId" element={<CustomerPayments />} />
                   <Route path="/materials" element={<Materials />} />
                   <Route path="/orders" element={<Orders />} />
                   <Route path="/payments" element={<Payments />} />

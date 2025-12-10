@@ -74,6 +74,14 @@ export const customersAPI = {
   updateCreditLimit: (id, data) => api.put(`/customers/${id}/credit-limit`, data),
 };
 
+// Customer Transactions APIs
+export const customerTransactionsAPI = {
+  createSale: (data) => api.post('/customer-transactions/sale', data),
+  getAllSales: (params) => api.get('/customer-transactions/sales/all', { params }),
+  createPayment: (data) => api.post('/customer-transactions/payment', data),
+  getAllPayments: (params) => api.get('/customer-transactions/payments/all', { params }),
+};
+
 // Materials APIs
 export const materialsAPI = {
   getAll: (params) => api.get('/materials', { params }),

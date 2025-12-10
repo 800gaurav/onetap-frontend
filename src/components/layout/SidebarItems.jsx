@@ -15,6 +15,7 @@ import {
   FiUserPlus,
   FiLayers,
   FiShoppingBag,
+  FiTrendingUp,
 } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -38,6 +39,8 @@ export default function SidebarItems({ userRole, onItemClick, isCollapsed }) {
     { name: "Suppliers", icon: <FiTruck size={20} />, path: "/dashboard/suppliers" },
     { name: "Purchases", icon: <FiShoppingBag size={20} />, path: "/dashboard/purchases" },
     { name: "Customers", icon: <FiUsers size={20} />, path: "/dashboard/customers" },
+    { name: "Customer Sales", icon: <FiTrendingUp size={20} />, path: "/dashboard/customer-sales" },
+    { name: "Customer Payments", icon: <FiDollarSign size={20} />, path: "/dashboard/customer-payments" },
     { name: "Materials", icon: <FiPackage size={20} />, path: "/dashboard/materials" },
     { name: "Orders", icon: <FiShoppingCart size={20} />, path: "/dashboard/orders" },
     { name: "Payments", icon: <FiCreditCard size={20} />, path: "/dashboard/payments" },
